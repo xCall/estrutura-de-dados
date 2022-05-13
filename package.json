@@ -1,0 +1,6 @@
+{
+  "type": "module",
+  "dependencies": {
+    "babel-cli": "^6.26.0"
+  }
+}
