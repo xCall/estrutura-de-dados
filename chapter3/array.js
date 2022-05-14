@@ -149,5 +149,114 @@ console.log(number4(numbers3));
 console.log(isEven(numbers3));
 
 // Usando o metodo every vai interar pelos valores do array ate devolver false
-console.log('metodo every');
-numbers3.every(isEven);
+// numbers3.every(number4)
+console.log('\n metodo every', numbers3.every(number4));
+
+// Usando o metodo some que vai iterar pelos valores do array ate devolver true
+// numbers3.some(number4);
+console.log('\n Metodo some', numbers3.some(number4));
+
+// Iterando usando o forEach que é parecido com o for
+
+numbers3.forEach(x => console.log('\n forEach', x % 2 === 0));
+
+// Usando o metodo map que cria um array ao iterar sobre outro de acordo com as condicoes passadas
+
+const myMap = numbers3.map(number4);
+console.log('\n Map', myMap);
+
+// Usando o metodo filter para retornar os valores cujo a logica da interacao devolve true
+
+const myFilter = numbers3.filter(isEven);
+console.log('\n Filter', myFilter);
+
+// Usando o metodo reduce muito usado para fazer somas e calculos
+
+console.log('\n Reduce', numbers3.reduce((previous, current) => previous + current));
+
+// Formas alternativas ao for para interar
+// Laco for...of
+
+for (const n of numbers3) {
+  console.log(n % 2 === 0 ? 'even' : 'odd');
+}
+
+// Usando o @@iterator
+
+let iterator = numbers3[Symbol.iterator]();
+for (const n of iterator) {
+  console.log('\n Iterator', n);
+}
+
+// Metodos entries, keys e value do array devolvendo iteradores
+
+// entries
+
+let aEntries = numbers3.entries() // Obtem um iterador de chave valor
+console.log('\n aEntries ', aEntries.next().value);
+console.log('\n aEntries ', aEntries.next().value);
+console.log('\n aEntries ', aEntries.next().value);
+console.log('\n aEntries ', aEntries.next().value);
+
+// Usando entries com um for
+for (const n of aEntries) {
+  console.log(n);
+}
+
+// keys
+
+const aKeys = numbers3.keys(); // Obtem um iterador de chave
+console.log('\n aKeys ', aKeys.next().value);
+console.log('\n aKeys ', aKeys.next().value);
+console.log('\n aKeys ', aKeys.next().value);
+console.log('\n aKeys ', aKeys.next().value);
+
+// Usando key com um for
+for (const n of aKeys) {
+  console.log(n);
+}
+
+// value
+
+const aValues = numbers3.values(); // Obtem um iterador de valor
+console.log('\n aValues ', aValues.next().value);
+console.log('\n aValues ', aValues.next().value);
+console.log('\n aValues ', aValues.next().value);
+console.log('\n aValues ', aValues.next().value);
+
+// Usando o values com um for
+
+for (const n of aValues) {
+  console.log(n);
+}
+
+// O metodo from cria um novo array a partir de um array existente
+
+let numbersFrom = Array.from(numbers3);
+
+// Tambem e possivel passar uma funcao para determinar quais valores passar
+
+let evens = Array.from(numbers3, x => (x % 2 === 0));
+
+console.log('\n from', numbersFrom);
+console.log('\n from2', evens);
+
+// O metodo array of cria um array a partir dos argumentos passados para o metodo
+
+let numbers4 = Array.of(1); // O mesmo que executar let numbers4 = [1]
+let numbers5 = Array.of(1, 2, 3, 4, 5); // O mesmo que executar let numbers5 = [1,2,3,4,5]
+
+console.log(numbers5);
+
+// O metodo fill prenche o array com um valor
+
+let numbersCopy = Array.of(1, 2, 3, 4, 5, 6);
+
+// O fill prenche o array em todas as suas posicoes com um valor passado
+// numbersCopy.fill(0);
+console.log('\n fill', numbersCopy.fill(0)  );
+
+// Tambem podemos definir a partir de qual posicao preencher
+
+// numbersCopy.fill(3, 1);
+console.log('\n fill', numbersCopy.fill(3, 4));
