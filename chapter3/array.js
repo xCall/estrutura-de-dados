@@ -144,7 +144,7 @@ function isEven(x) {
 
 let number4 = x => x % 2 === 0;
 console.log('\n\n Função retorna mod 2 = 0');
-let numbers3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+let numbers3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 console.log(number4(numbers3));
 console.log(isEven(numbers3));
 
@@ -254,9 +254,29 @@ let numbersCopy = Array.of(1, 2, 3, 4, 5, 6);
 
 // O fill prenche o array em todas as suas posicoes com um valor passado
 // numbersCopy.fill(0);
-console.log('\n fill', numbersCopy.fill(0)  );
+console.log('\n fill', numbersCopy.fill(0));
 
 // Tambem podemos definir a partir de qual posicao preencher
 
 // numbersCopy.fill(3, 1);
 console.log('\n fill', numbersCopy.fill(3, 4));
+
+// Tambem e possivel passar o valor, a posicao inicial e final ate onde deve ser preenchido
+let numbersCopy2 = Array.of(1, 2, 3, 4, 5, 6);
+// numbersCopy2.fill(1,3,5);
+console.log('\n fill', numbersCopy2.fill(1, 3, 5));
+
+// Criando valores e ja iniciando com um valor
+let ones = Array(6).fill(1);
+console.log('\n ones', ones);
+
+
+// O metodo copyWithin copia uma sequencia de valroes do array para a posicao de um indice de inicio
+let copyArray = [1, 2, 3, 4, 5, 6];
+// copyArray.copyWithin(0, 3);
+console.log('\n copyArray', copyArray.copyWithin(0, 3));
+
+copyArray = [1, 2, 3, 4, 5, 6];
+// copyArray.copyWithin(1, 3, 5);
+console.log('\n copyArray', copyArray.copyWithin(1, 3, 5));
+
